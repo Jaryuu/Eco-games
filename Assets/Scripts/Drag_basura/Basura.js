@@ -2,10 +2,10 @@
 private  var offset:Vector3;
 
 private var moveSpeed = 0.2;
-private var maxX = 5.5;
-private var minX = -5.5;
-private var maxY = 5.0;
-private var minY = -5.0;
+private var maxX = Camera.main.orthographicSize * Screen.width / Screen.height;
+private var minX = -Camera.main.orthographicSize * Screen.width / Screen.height;;
+private var maxY = Camera.main.orthographicSize;
+private var minY = - Camera.main.orthographicSize;
 private var tChange: float = 0; // force new direction in the first Update
 private var randomX: float;
 private var randomY: float;
