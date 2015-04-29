@@ -12,11 +12,10 @@ function Start () {
 }
 
 function Update () {
-	
 }
 
 function OnMouseUp(){
-	if(!figura.enabled){
+	if(!figura.enabled && !Controlador_memoria.ocupado){
 		figura.enabled = true;
 		controlador.SendMessage("levantaron", identidad);
 	}
@@ -37,6 +36,5 @@ function esconder(){
 function seleccionarImagen(num : int){	
 	figura.sprite = Resources.Load("basuras/Sprites/basura_"+num, Sprite);
 	numero = num;
-
 	figura.enabled = true;
 }
