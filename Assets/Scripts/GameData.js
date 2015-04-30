@@ -5,6 +5,7 @@ static var score = 0;
 static var hScore = 1100;
 static var height : int;
 static var width : int;
+static var velocidad = 6.0;
 static var escenas = ["drag_basura", "save_earth", "Memoria"];
 
 function Start () {
@@ -12,10 +13,18 @@ function Start () {
 	width = Screen.width;
 	print("H: "+height);
 	print("W: "+width);
+	
 }
 
 function Update () {
 
+}
+
+static function nuevoJuego(){
+	cantidadVidas = 5;
+	score = 0;
+	velocidad = 6.0;
+	cambiarJuego();
 }
 
 static function cambiarJuego(){
@@ -25,5 +34,5 @@ static function cambiarJuego(){
 	}else{
 		Application.LoadLevel(escenas[eleccion]);
 	}
-
+	velocidad = velocidad * 0.98;
 }

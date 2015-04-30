@@ -17,6 +17,8 @@ function Update () {
 
 function Instanciar(){
 	var eleccion = Random.Range(1,7);
-	basurita = Resources.Load("basuras/con_gravedad/gravedad_"+eleccion);
-	Instantiate(basurita, Vector3 (Random.Range(-5.0,5.0), 6.05, -7), Quaternion.identity);
+	basurita = Instantiate(Resources.Load("basuras/con_gravedad/gravedad_"+eleccion),
+										  Vector3 (Random.Range(-5.0,5.0),
+										   6.05, -7), Quaternion.identity);
+	basurita.GetComponent.<Rigidbody2D>().gravityScale *= (6.0/GameData.velocidad); 
 }
