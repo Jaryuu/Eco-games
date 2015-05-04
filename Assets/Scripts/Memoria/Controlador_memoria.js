@@ -35,10 +35,14 @@ function Start () {
 			//Obtenerla
 			var num = lista[eleccion];
 		
-			objeto = Instantiate(Resources.Load("Tile"), Vector3 (baseX *(j- 1),baseY *(i-1), 1), Quaternion.identity);
+			objeto = Instantiate(Resources.Load("Tile"), Vector3 (baseX *(j- 1),baseY *(1.5*i-0.8), 1), Quaternion.identity);
 			objeto.SendMessage("setControlador", gameObject);
 			objeto.SendMessage("seleccionarImagen", num);
 			objeto.SendMessage("setIdentidad", contador);
+			
+			objeto.SendMessage("cambiarEscala", anchoPantalla*0.061185923);
+			objeto.SendMessage("cambiarEscala", altoPantalla*0.14);
+			
 			listaElementos.push(objeto);
 			listaNumero.push(num);
 			//Borrarla de las opciones

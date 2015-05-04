@@ -6,9 +6,11 @@ var numero : int;
 var identidad : int;
 var prueba : Sprite;
 var controlador : GameObject;
+var ratioAnterior : float;
 
 function Start () {
 	figura.enabled = false;
+	ratioAnterior = 10000.0;
 }
 
 function Update () {
@@ -31,6 +33,13 @@ function setIdentidad(ident : int){
 
 function esconder(){
 	figura.enabled = false;
+}
+
+function cambiarEscala(ratio : float){
+	if(ratioAnterior > ratio){
+		gameObject.GetComponent.<Transform>().localScale = new Vector3(ratio, ratio, 1);
+		ratioAnterior = ratio;
+	}
 }
 
 function seleccionarImagen(num : int){	
