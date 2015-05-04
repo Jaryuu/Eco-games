@@ -6,7 +6,7 @@ static var hScore = 0;
 static var height : int;
 static var width : int;
 static var velocidad = 6.0;
-static var escenas = ["drag_basura", "save_earth", "Memoria"];
+static var escenas = ["drag_basura", "save_earth", "Memoria","limpiar_lago"];
 
 function Start () {
 	height = Screen.height;
