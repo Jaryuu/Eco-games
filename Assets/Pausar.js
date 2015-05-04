@@ -14,10 +14,10 @@ function Update () {
 function OnMouseUp(){
 	//Pausar y despausar
 	if(pausado){
-		pausar();
+		desPausar();
 	}
 	else{
-		desPausar();	
+		pausar();	
 	}
 	pausado = !pausado;
 	this.enabled = true;
