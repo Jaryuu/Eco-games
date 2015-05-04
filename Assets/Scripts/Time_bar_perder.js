@@ -17,6 +17,5 @@ function Update() {
 		GameData.cantidadVidas -= 1;
 	 	GameData.cambiarJuego();
 	 	var fin = Time.time;
-	 	print (fin - inicio);
 	 }
 }
