@@ -2,7 +2,7 @@
 
 static var cantidadVidas = 5;
 static var score = 0;
-static var hScore = 1100;
+static var hScore = 0;
 static var height : int;
 static var width : int;
 static var velocidad = 6.0;
@@ -30,6 +30,9 @@ static function nuevoJuego(){
 static function cambiarJuego(){
 	var eleccion = Random.Range(0,escenas.length);
 	if(cantidadVidas == 0){
+		if(score > hScore){
+			hScore = score;
+		}
 		Application.LoadLevel("Game over");
 	}else{
 		Application.LoadLevel(escenas[eleccion]);

@@ -15,9 +15,12 @@ function Start () {
 	ocupado = false;
 	ultimoLevantado = -1;
 	parejasEncontradas = 0;
-
-	var baseX = 0.9 * ancho;
-	var baseY = 0.9 * alto;
+	
+	var anchoPantalla = Camera.main.orthographicSize * Screen.width / Screen.height;
+	var altoPantalla = Camera.main.orthographicSize;
+	
+	var baseX = anchoPantalla/(ancho);
+	var baseY = 1.1*altoPantalla/(alto);
 	var contador = -1;
 	
 	listaElementos = new Array();
@@ -32,7 +35,7 @@ function Start () {
 			//Obtenerla
 			var num = lista[eleccion];
 		
-			objeto = Instantiate(Resources.Load("Tile"), Vector3 (baseX - 3*j,baseY - 3*i, 1), Quaternion.identity);
+			objeto = Instantiate(Resources.Load("Tile"), Vector3 (baseX *(j- 1),baseY *(i-1), 1), Quaternion.identity);
 			objeto.SendMessage("setControlador", gameObject);
 			objeto.SendMessage("seleccionarImagen", num);
 			objeto.SendMessage("setIdentidad", contador);
