@@ -2,7 +2,8 @@
 var tiempo : float;
 
 function Start () {
- Destroy(gameObject, tiempo);
+	tiempo = 2.0;
+ 	Destroy(gameObject, tiempo);
 }
 
 function Update () {

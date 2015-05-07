@@ -1,15 +1,25 @@
 ﻿var t0 : float;
 var tf : float;
+var estaPresionado: boolean;
 function Start () {
 	t0 = Time.fixedTime; 
 }
 
 function Update () {
-	
+	if(!estaPresionado){
+		t0 += Time.deltaTime;
+		var transparency = (1 - (tf-t0)/6.0f);
+		gameObject.GetComponent.<Renderer>().material.color.a = transparency;
+	}
+}
+
+function OnMouseDown(){
+	estaPresionado = true;
 }
 
 function OnMouseUp (){
-	t0 = Time.fixedTime; 
+	estaPresionado = false;
+	//t0 = Time.fixedTime; 
 	tf = Time.fixedTime;
 }
 
