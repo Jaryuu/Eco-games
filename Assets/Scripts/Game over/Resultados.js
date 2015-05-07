@@ -7,7 +7,7 @@ var fact : Text;
 
 //Obtenidos de: http://www.planetpals.com/fastfacts.html
 var datos_curiosos = ["Did you know? 86% of Ocean debris is plastic",
-					  "Did you know? The garbage in a landfill stays for a for about 30 years",
+					  "Did you know? The garbage in a landfill stays for about 30 years",
 					  "Did you know? One third of all water is used to flush the toilet."];
 
 function Start () {
