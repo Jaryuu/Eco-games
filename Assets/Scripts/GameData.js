@@ -6,7 +6,8 @@ static var hScore = 0;
 static var height : int;
 static var width : int;
 static var velocidad = 6.0;
-static var escenas = ["drag_basura", "save_earth", "Memoria","limpiar_lago"];
+static var escenas = ["drag_basura", "save_earth", "Memoria","limpiar_lago","Turbina"];
+static var ultimaEleccion : int;
 
 function Start () {
 	height = Screen.height;
@@ -27,15 +28,23 @@ static function nuevoJuego(){
 	cambiarJuego();
 }
 
-static function cambiarJuego(){
+static function obtenerNivel(){
 	var eleccion = Random.Range(0,escenas.length);
+	while(eleccion == ultimaEleccion){
+		eleccion = Random.Range(0,escenas.length);
+	}
+	ultimaEleccion = eleccion;
+	return escenas[eleccion];
+}
+
+static function cambiarJuego(){
 	if(cantidadVidas == 0){
 		if(score > hScore){
 			hScore = score;
 		}
 		Application.LoadLevel("Game over");
 	}else{
-		Application.LoadLevel(escenas[eleccion]);
+		Application.LoadLevel(obtenerNivel());
 	}
 	velocidad = velocidad * 0.98;
 }

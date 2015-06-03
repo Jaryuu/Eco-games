@@ -2,6 +2,7 @@
 
 var pausado : boolean;
 var escalaTiempo : float;
+var menuPausa : GameObject;
 
 function Start () {
 	transform.position = Camera.main.ViewportToWorldPoint(new Vector3(0.1, 0.9, 1));
@@ -29,10 +30,12 @@ function pausar(){
     switchEnable(false);
     var propio = gameObject.GetComponent(BoxCollider2D) as BoxCollider2D;
     propio.enabled = true;
+    menuPausa = Instantiate(Resources.Load("Pausado"));
 }
 
 function desPausar(){
     Time.timeScale = escalaTiempo;
+    Destroy(menuPausa);
     switchEnable(true);
 }
 
