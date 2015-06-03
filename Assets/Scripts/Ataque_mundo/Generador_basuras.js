@@ -9,7 +9,7 @@ function Start () {
 
 function Update () {
 	contador++;
-	if(contador >= 35){
+	if(contador >= 35 && Time.timeScale != 0){
 		Instanciar();
 		contador = 0;
 	}
