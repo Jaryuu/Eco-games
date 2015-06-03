@@ -5,7 +5,15 @@ function Start () {
 }
 
 function Update () {
-
+	var btn : GameObject;
+	if(gameHelp.currentScreen==1){
+		btn = GameObject.Find("prev");
+		btn.GetComponent.<Renderer>().material.color.a=0;
+	}
+	else if(gameHelp.currentScreen==4){
+		btn = GameObject.Find("next");
+		btn.GetComponent.<Renderer>().material.color.a=1;
+	}
 }
 
 function OnMouseUp (){

@@ -5,7 +5,16 @@ function Start () {
 }
 
 function Update () {
-
+	var btn : GameObject;
+	if(gameHelp.currentScreen==5){
+		btn = GameObject.Find("next");
+		btn.GetComponent.<Renderer>().material.color.a=0;
+	}
+	else if(gameHelp.currentScreen==2){
+		btn = GameObject.Find("prev");
+		btn.GetComponent.<Renderer>().material.color.a=1;
+	}
+	
 }
 
 function OnMouseUp (){
@@ -14,6 +23,7 @@ function OnMouseUp (){
 	if(gameHelp.currentScreen!=5){
 		gameHelp.currentScreen+=1;
 	}
+	
 	
 	for (var i=1;i<=5;i++){
 		if (i!=gameHelp.currentScreen){
