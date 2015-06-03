@@ -19,29 +19,33 @@ function Update () {
 		green = Random.Range(0.0, limite) * Mathf.Sign(green);
 		blue = Random.Range(0.0, limite) * Mathf.Sign(blue);
 		
-    	if(fondo.color.r >= 1 || fondo.color.r <= 0){
-    		red = -red;
-    	}
-    	if(fondo.color.g >= 1 || fondo.color.g <= 0){
-    		green = -green;
-    	} 
-    	if(fondo.color.b >= 1 || fondo.color.b <= 0){
-    		blue = -blue;
-    	}    	       
-        // set a random interval between 0.5 and 1.5
         tChange = Time.time + Random.Range(1.0,2.0);
 	}
+
+	if(fondo.color.r >= 1 || fondo.color.r <= 0){
+		red = -red;
+	}
+	if(fondo.color.g >= 1 || fondo.color.g <= 0){
+		green = -green;
+	} 
+	if(fondo.color.b >= 1 || fondo.color.b <= 0){
+		blue = -blue;
+	}    	       
 
 	fondo.color = new Color(fondo.color.r + red, 
 						  	fondo.color.g + green,
 						  	fondo.color.b + blue,
 						  	fondo.color.a);
-	/*				  	 
+					  	 
+	print("-r: " + red +
+		  " -g: " + green + 
+		  " -b: " + blue);
+
 	print("r: " + fondo.color.r +
 	  " g: " + fondo.color.g + 
 	  " b: " + fondo.color.b  + 
 	  " a: " + fondo.color.a);	
-	*/				  	 
+					  	 
 	}
 	
 function OnMouseDown(){
